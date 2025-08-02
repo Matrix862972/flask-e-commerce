@@ -42,13 +42,13 @@ def market_page():
                 flash(f"You have sold {s_item_object.name} for {s_item_object.price}!", category='success')
             else:
                 flash(f"You cannot sell {s_item_object.name} as it is not owned by you.", category='danger')
-                
+
         return redirect(url_for("market_page"))
     
     if request.method == "GET":
-        items = Item.query.filter_by(owner=None)
-        owned_items = Item.query.filter_by(owner = current_user.id)
-        return render_template("market.html", items=items, purchase_form=purchase_form, owned_items=owned_items,selling_form=selling_form)
+        items = list(Item.query.filter_by(owner=None))
+        owned_items = list(Item.query.filter_by(owner=current_user.id))
+        return render_template("market.html", items=items, purchase_form=purchase_form, owned_items=owned_items, selling_form=selling_form)
 
 @app.route("/register", methods=["GET", "POST"])
 def register_page():

@@ -3,13 +3,53 @@
     Welcome to Flask Market
 {% endblock %}
 {% block content %}
-    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-dark" style="color:white">
-        <div class="col-md-5 p-lg-5 mx-auto my-5">
-            <h1 class="display-4 font-weight-normal">This is a Flask Market</h1>
-            <p class="lead font-weight-normal">Start purchasing products by clicking the link below</p>
-            <a class="btn btn-primary" href="{{ url_for('market_page') }}">Get Started</a>
+<section class="jumbotron text-center bg-primary text-white mb-0" style="background: linear-gradient(135deg, #007bff 60%, #6610f2 100%);">
+  <div class="container">
+    <h1 class="display-3 font-weight-bold mb-4">Welcome to Flask Market</h1>
+    <p class="lead mb-4">A modern e-commerce platform built with Flask.<br>Buy, sell, and manage your items with ease.</p>
+    <a href="{{ url_for('market_page') }}" class="btn btn-lg btn-light font-weight-bold shadow">Start Shopping <i class="fas fa-shopping-cart ml-2"></i></a>
+  </div>
+</section>
+
+<section class="container py-5">
+  <div class="row text-center">
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow border-0 bg-dark text-white">
+        <div class="card-body">
+          <i class="fas fa-user-plus fa-3x mb-3 text-primary"></i>
+          <h5 class="card-title font-weight-bold">Easy Registration</h5>
+          <p class="card-text">Sign up in seconds and join our growing community of buyers and sellers.</p>
         </div>
-        <div class="product-device box-shadow d-none d-md-block"></div>
-        <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+      </div>
     </div>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow border-0 bg-dark text-white">
+        <div class="card-body">
+          <i class="fas fa-exchange-alt fa-3x mb-3 text-success"></i>
+          <h5 class="card-title font-weight-bold">Buy & Sell Instantly</h5>
+          <p class="card-text">Browse the marketplace, purchase items, or sell your own with just a click.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow border-0 bg-dark text-white">
+        <div class="card-body">
+          <i class="fas fa-lock fa-3x mb-3 text-warning"></i>
+          <h5 class="card-title font-weight-bold">Secure & Simple</h5>
+          <p class="card-text">Your data and transactions are protected with modern best practices.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container pb-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 text-center">
+      <h2 class="font-weight-bold mb-3">Get Started Today</h2>
+      <p class="mb-4">Create an account, explore the market, and experience a seamless buying and selling journey.</p>
+      <a href="{{ url_for('register_page') }}" class="btn btn-outline-primary btn-lg font-weight-bold">Register Now</a>
+    </div>
+  </div>
+</section>
 {% endblock %}
